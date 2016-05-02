@@ -9,6 +9,7 @@ use yii\web\View;
 class Column extends \yii\grid\Column
 {
     public $headerOptions = ['style' => 'width: 30px;'];
+    public $iconStyle = '&#9776;';
 
     public function init()
     {
@@ -18,7 +19,7 @@ class Column extends \yii\grid\Column
 
     protected function renderDataCellContent($model, $key, $index)
     {
-        return Html::tag('div', '&#9776;', [
+        return Html::tag('div', $this->iconStyle, [
             'class' => 'sortable-widget-handler',
             'data-id' => $model->id,
         ]);
